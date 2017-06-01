@@ -1,17 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>DELTA TASK 1</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <script >
-  function add() {
-    var userInput = document.getElementById("userInput").value;
-            document.write(userInput);
-  }
+  <meta name="viewport" content="width=device-width", minimum-scale="1.0", maximum-scale="1.0", user-scalable="yes">
+  <script>
+    function add() {
+      var userInput = document.getElementById("Input").value;
+      var note = document.createTextNode(userInput);
+      var newnote = document.createElement("li");
+      newnote.appendChild(note);
+      document.getElementById("notes").appendChild(newnote);
+    }
   </script>
 </head>
 <body>
-<input type="text" id="userInput"=>give me input</input>
-<button onclick="add()">ADD NOTE</button>
+  <form>
+  NOTE: <input type="text" id="Input"  placeholder="note..." ><br><br>
+  <button type="button" onclick="add()">add</button><br>
+</form>
+  <hr>
+    <ol id="notes">
+    </ol>
+
 </body>
 </html>
